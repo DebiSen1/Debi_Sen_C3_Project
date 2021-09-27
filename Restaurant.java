@@ -76,4 +76,16 @@ public class Restaurant {
 
     }
 
+    //method is implemented to pass the failing test case
+    public int calculateTotalPrice(List<Item> menu){
+
+        int totalAmount = 0;
+
+        for(Item item : menu){
+            int price = item.getPrice();
+            totalAmount = totalAmount+price;
+        }
+        return totalAmount;
+    }
+
 }
