@@ -87,5 +87,19 @@ class RestaurantTest {
         assertThrows(ItemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
-    
+
+
+    //TDD--test case is failing as the required method is not implemented.
+    @Test
+    public void calculateTotalPrice_should_return_total_order_value() {
+
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+
+        int expectedTotal = 119+269;
+
+        int actualTotal = restaurant.calculateTotalPrice(restaurant.getMenu());
+
+        assertEquals(expectedTotal,actualTotal);
+    }
 }
